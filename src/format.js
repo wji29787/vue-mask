@@ -8,7 +8,7 @@
  export default function (text,wholeMask){
     if(!wholeMask) return text
 
-    const maskStartRegExp = /^([^#ANXF]+)/;
+    const maskStartRegExp = /^([^#ANX]+)/;
     if(+text.length ===1 && maskStartRegExp.test(wholeMask)){
         text = maskStartRegExp.exec(wholeMask)[0] +text
     }
@@ -23,7 +23,6 @@
             case '?':
             case 'N':
             case 'X':
-            case 'F':
             break;
             default:
 
@@ -45,9 +44,6 @@
             break;
             case 'N':
             /[a-z0-9]/i.test(char) ? newText += char : x = 0;
-            break;
-            case 'F':
-            /[a-zA-Z0-9]/i.test(char) ? newText += char : x = 0;
             break;
             case 'X':
             newText += char;
